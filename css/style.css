@@ -1,0 +1,331 @@
+/* 
+    ---------------------------------------------------------------- 
+                          Global style
+    ----------------------------------------------------------------
+ */
+ *, *::after, *::before 
+ {
+   padding: 0 ;
+   margin: 0 ;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+ }
+ /* pseudo elements */
+ *::after, *::before 
+ {
+   content: '';
+ }
+ body 
+ {
+   font-family: "PT Sans", sans-serif;
+   color: #3e585f;
+   background-color: #47374e;
+ }
+ /* ++++++++++++++++++++++++++++ Overlay layer +++++++++++++++++++++++ */
+ .overlay
+ {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(71, 55, 78, 0.8);
+   visibility: hidden;
+   opacity: 1 ;
+ }
+ a 
+ {
+   color: #f82f53;
+   text-decoration: none;
+ }
+ img 
+ {
+   max-width: 100%;
+ }
+ /*  
+   ----------------------------------------------------------------
+         Components : reusable parts of our design
+   ----------------------------------------------------------------
+  */
+ .cd-container 
+ {
+     /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+     width: 90%;
+     max-width: 1170px;
+     margin: 0 auto;
+     /* border: 5px solid #f00 ;   */
+ }
+ .cd-container::after 
+ {
+     content: "";
+     display: table;
+     clear: both ;
+ }
+ /*  
+ ----------------------------------------------------------------
+                   Main components 
+ ----------------------------------------------------------------
+ */
+ header 
+ {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100px;
+   /* border: 5px solid #0f0;  */
+ }
+ header h1 
+ {
+   color: #ffffff;
+   font-size: 2rem;
+ }
+ /* =============================== Products Blocks =============================== */
+ /* ------------ products Container : <ul></ul> ------------ */
+ .cd-items 
+ {
+   /* border: 5px solid #00f;  */
+ }
+ /* ------------ product item : <li></li> ------------ */
+ .cd-item 
+ {
+     position: relative;
+     overflow: hidden;
+     margin: 0 0 2em 0;  
+ }
+ .cd-item > img 
+ {
+   display: block;
+   width: 100%;
+ }
+ /* ############### Responsive : Tablet Screen ############### */
+ @media only screen and (min-width: 768px) 
+ {
+   .cd-item 
+   {
+     width: 48%;
+     float: left;
+     margin: 0 4% 2em 0; 
+   }
+   /* ++++++++++++ delete "margin-right" for All "even items" ++++++++++++++ */
+   .cd-item:nth-child(2n) 
+   {
+     margin-right: 0;
+   }
+ }
+ /* ############### Responsive : Laptop Screen ############### */
+ @media only screen and (min-width: 1024px) 
+ {
+   .cd-item 
+   {
+     width: 23.5%;
+     float: left;
+     margin: 0 2% 1em 0;
+     /* border: 5px solid #f00 ;  */
+   }
+   .cd-item:nth-child(2n) 
+   {
+     margin-right: 2%;
+   }
+   .cd-item:nth-child(4) ,  .cd-item:nth-child(8)  
+   {
+     margin-right: 0 !important;
+   }
+ }
+ /* ++++++++++++ Product Links : <a></a> ++++++++++++ */
+ .cd-trigger 
+ {
+     position: absolute;
+     bottom: -100px ;
+     left: 0;
+     width: 100%;
+     height: 50px;
+     line-height: 50px;
+     text-align: center;
+     color: #ffffff; 
+     background: rgba(0, 0, 0, 0.2);
+     transition: all 0.5s ease;
+     -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+     -ms-transition: all 0.5s ease;
+     -o-transition: all 0.5s ease;
+ }
+ .cd-item:hover  .cd-trigger
+ { 
+   background: rgba(0, 50 , 0 , 0.6);
+   bottom: 0 ;
+ }
+ 
+ /* =============================== Preview Container =============================== */
+ .overlayContainer
+ {
+    position: fixed;
+    top: 0 ;
+    left: 0 ;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    transform: scale(0,0) ;
+    transition: all 0.5s ease-in-out ;
+    /*border: 5px solid #f00 ; */
+}
+ .modal-container
+ {
+     display: flex;
+     justify-content: space-between ;
+     align-items: center;
+     flex-direction: row ;
+     height: 500px ;
+     width: 75% ;
+     margin: 60px auto ;
+     /* border: 5px solid #0f0 ;   */
+ }
+ /* ++++++++++++++ left part : product slider ++++++++++++++ */
+ .cd-slider-wrapper 
+ {
+     width: 50% ;
+     height: 100% ;
+     /* border: 2px solid #00f ;  */
+ }
+ /* ----- products slider ----- */
+ .cd-slider 
+ {
+   float: left;
+   width: 100% ;
+   height: 100%  ;
+   /* border: 2px solid #f00 ;  */
+ }
+ .cd-slider  img 
+ {
+     width: 100%;
+     height: 100% ;
+     object-fit: cover;  
+ } 
+ /* ----- slider controls [ Slider Arrows ] ----- */
+ .cd-slider-navigation 
+ {
+   position: relative;
+   width: 100% ;
+   top: 50%;
+   transform: translateY(-50%);
+   /* border: 2px solid #0ff ;  */
+
+ } 
+ .cd-slider-navigation  .arrow
+ {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   color: #fff;
+   background: rgba( 0 , 0 , 0 , 0.8);
+   cursor: pointer;
+   font-size: 30px ;
+   padding: 8px 8px ;
+   transition: all 0.5s ease-in-out;
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -ms-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   -webkit-transform: translateY(-50%);
+   -moz-transform: translateY(-50%);
+   -ms-transform: translateY(-50%);
+   -o-transform: translateY(-50%);
+ }
+ .cd-slider-navigation  .arrow:hover 
+ {
+     background: rgba(71, 55, 78, 0.8);
+     color: #fff;
+   }
+ .cd-slider-navigation  .cd-prev
+ {
+   left: 0 ;
+ }
+ .cd-slider-navigation  .cd-next
+ {
+     right: 0 ;
+ }
+ /* ++++++++++++++ right part : product info +++++++++++++++ */
+ .cd-item-info 
+ {
+   position: relative;
+   float: right;
+   width: 50% ;
+   height: 100%  ;
+   overflow: hidden ;
+   padding: 50px ;
+   background-color: #fff ;
+   /* border: 5px solid #00f ;  */
+ }
+ .cd-item-info h2 
+ {
+   padding: 0 ;
+   margin: 0 ;
+   font-size: 28px;
+   font-size: 1.75rem;
+   text-transform: capitalize;
+   color: #3E585F ;
+ }
+ .cd-item-info p 
+ {
+   line-height: 1.6;
+   margin: 1em 0;
+   color: #67919c;
+   text-transform: capitalize;
+ }
+ /* "Add to cart" button */
+ .cd-item-info .add-to-cart 
+ {
+   border: none;
+   padding: 0.6em 1.2em;
+   background-color: #f82f53;
+   color: #ffffff;
+   font-size: 1rem;
+   cursor: pointer;
+   border-radius: 5px ;
+   -webkit-border-radius: 5px ;
+   -moz-border-radius: 5px ;
+   -ms-border-radius: 5px ;
+   -o-border-radius: 5px ;
+}
+ /* "Add to cart" button */
+ .cd-item-info .learnMore
+ {
+     border: none;
+     padding: 0.6em 1.2em;
+     background-color: #3e585f;
+     color: #ffffff;
+     font-size: 1rem;
+     cursor: pointer;
+     border-radius: 5px ;
+ }
+ /* +++++++++++++++++++++ close button +++++++++++++++++++++ */
+ .closeSign
+ {
+   position: absolute; 
+   top: 8px ;
+   right: 20px ;
+   font-size:50px;
+   color:#fff; 
+   text-decoration:none; 
+   z-index: 999 ;
+ }
+ /* ############################################## Responsive ############################################## */
+ @media (min-width: 0px) and (max-width:992px)
+ {
+     .modal-container
+     {
+        width: 100% ;
+     }
+     /* ++++++++++++++ left part : product slider ++++++++++++++ */
+     .cd-slider-wrapper 
+     {
+       width: 100% ;
+     }
+     /* ++++++++++++++ right part : product info +++++++++++++++ */
+     .cd-item-info 
+     {
+       display: none ;
+       width: 0 ;
+     }
+ }

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- fontawesome library -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- style css -->
+	<link rel="stylesheet" href="css/style.css"> 
+	<title>Product Quick View | CodyHouse</title>
+</head>
+<body>
+	<div class="products">
+		<header>
+			<h1>Product Quick View</h1>
+		</header>
+		<!-- =============================== Products Blocks =============================== -->
+		<ul class="cd-items cd-container">
+			<!-- ++++++++ product 1 ++++++++ -->
+			<li class="cd-item">
+				<img src="img/cars/item-1.jpg" alt="Item Preview">
+				<a href="#0" class="cd-trigger" id="link1">Quick View</a>
+			</li>
+			<!-- ++++++++ product 2 ++++++++ -->
+			<li class="cd-item">
+				<img src="img/headphones/item-1.jpg" alt="Item Preview">
+				<a href="#0" class="cd-trigger" id="link2">Quick View</a>
+			</li> 
+			<!-- ++++++++ product 3 ++++++++ -->
+			<li class="cd-item">
+				<img src="img/joystick/item-1.jpg" alt="Item Preview">
+				<a href="#0" class="cd-trigger" id="link3">Quick View</a>
+			</li> 		
+			<!-- ++++++++ product 4 ++++++++ -->
+			<li class="cd-item">
+				<img src="img/labtop/item-1.jpg" alt="Item Preview">
+				<a href="#0" class="cd-trigger" id="link4">Quick View</a>
+			</li> 
+			<!-- ++++++++ product 5 ++++++++ -->
+			<li class="cd-item">
+				<img src="img/motocycles/item-1.jpg" alt="Item Preview">
+				<a href="#0" class="cd-trigger" id="link5">Quick View</a>
+			</li> 
+			<!-- ++++++++ product 6 ++++++++ -->
+			<li class="cd-item">
+				<img src="img/phones/item-1.jpg" alt="Item Preview">
+				<a href="#0" class="cd-trigger" id="link6">Quick View</a>
+			</li> 
+			<!-- ++++++++ product 7 ++++++++ -->
+			<li class="cd-item">
+				<img src="img/tv/item-1.jpg" alt="Item Preview">
+				<a href="#0" class="cd-trigger" id="link7">Quick View</a>
+			</li> 
+			<!-- ++++++++ product 8 ++++++++ -->
+			<li class="cd-item">
+				<img src="img/watches/item-1.jpg" alt="Item Preview">
+				<a href="#0" class="cd-trigger" id="link8">Quick View</a>
+			</li> 
+		</ul>
+		<!-- =============================== Preview Container =============================== -->
+		<!-- ++++++++++++++ overlay layer ++++++++++++++ -->
+		<div class="overlayContainer" id="overlayId">
+			<div class="cd-quick-view">
+				<div class="modal-container">
+					<!-- ++++++++++++++ left part : product slider +++++++++++++++ --> 
+					<div class="cd-slider-wrapper">
+						<!-- ----- products slider ----- -->
+						<div class="cd-slider">
+							<img src="img/cars/item-1.jpg"  name="slideShowImg" id="slideImgId" alt="Product 1">
+						</div>
+						<!-- ----- slider controls ----- -->
+						<div class="cd-slider-navigation">
+							<!-- previous Arrow -->
+							<a class="arrow cd-prev" id="leftArrow" href="#0">
+								<i class="fa fa-chevron-left"></i>
+							</a>
+							<!-- next Arrow -->
+							<a class="arrow cd-next" href="#0" id="rightArrow">
+								<i class="fa fa-chevron-right"></i>
+							</a>
+						</div> 
+					</div> 
+					<!-- ++++++++++++++ right part : product info +++++++++++++++ --> 
+					<div class="cd-item-info">
+						<h2 id="productH2Id"></h2>
+						<p id="productParaId"></p>
+						<!-- "add to cart" , "Learn more" Button -->
+						<div class="cd-item-action">
+							<button class="add-to-cart">Add to cart</button>		
+							<a href="#0" class="learnMore" >Learn more</a>
+						</div>
+					</div>
+					<!-- close button -->
+					<a href="#" class="closeSign" onclick="closeDiv()" id="closeIconId" title="click to disappear Navbar"> &times; </a>   												
+				</div>
+			</div>        
+		</div>
+	</div>
+		
+	<script src="js/jquery-2.1.1.js"></script> 
+	<script src="js/velocity.min.js"></script>
+	<script src="js/main.js"></script> 
+	</body>
+</html>
